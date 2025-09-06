@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\MarkController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ResultController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +37,13 @@ Route::get('/products/edit/{productId}',[ProductController::class,'productEdit']
 Route::post('/products/update/{productId}',[ProductController::class,'productUpdate'])->name('product.update');
 
 Route::get('/products/delete/{productId}',[ProductController::class,'productDelete'])->name('product.delete');
+
+Route::get('/students/index',[StudentController::class,'index'])->name('students.index');
+
+Route::get('/subjects/index',[SubjectController::class,'index'])->name('subjects.index');
+
+Route::get('/marks/create',[MarkController::class, 'create'])->name('markes.create');
+
+Route::post('/marks/store',[MarkController::class,'store'])->name('marks.store');
+
+Route::get('/result/index',[ResultController::class,'index'])->name('result.index');
